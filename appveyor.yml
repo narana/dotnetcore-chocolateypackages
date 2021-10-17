@@ -19,7 +19,7 @@ environment:
   au_test_groups: 1
 
   # Github token to commit pushed packages to repository
-  # github_user_repo: jberezanski/dotnetcore-chocolateypackages
+  # github_user_repo: dotnetcore-chocolatey/dotnetcore-chocolateypackages
   github_api_key:
     secure: jV9nImBrLpFCM/zb3CNpvNQe6BZDs7Llx8TRqq12AVcz1WP0outVsrjW8Kz8z78J #https://ci.appveyor.com/tools/encrypt
 
@@ -42,11 +42,23 @@ environment:
 
   # Chocolatey API key - to push updated packages
   api_key:
-    secure: NlT9DT/dYdnJ8NzOs0kKCDcUeLfAJ+JWyMt8Gb7QtPCVamoTwS7Rck/vL12Te3vP # https://ci.appveyor.com/tools/encrypt
+    secure: NKkgJaBLK+FD7Psrge7r2SRGApYLikJyVySB+N5vnVW/dqnPkZN7TyQJ0eXEaswK # https://ci.appveyor.com/tools/encrypt
+
+  # community.chocolatey.org login - to add maintainers to new packages
+  chocolateyorg_login:
+    secure: Uo5e6yqK4CWosd/TCO+8lgbCD/Un0YP3cZSfOca+3KY= # https://ci.appveyor.com/tools/encrypt
+
+  # community.chocolatey.org password - to add maintainers to new packages
+  chocolateyorg_password:
+    secure: geOYDNobypgTHO1eq+2MPK2nKQ1h1DMbvWz4LyzMAws= # https://ci.appveyor.com/tools/encrypt
+
+  # maintainers to set for pushed packages
+  maintainers:
+    dotnetcore-chocolateypackages,riezebosch,jberezanski
 
 init:
-- git config --global user.email "chocolatey@realdimensions.net"
-- git config --global user.name "Chocolatey"
+- git config --global user.email "dotnetcore-chocolateypackages@outlook.com"
+- git config --global user.name "dotnetcore-chocolateypackages"
 - git config --global core.safecrlf false
 
 install:
